@@ -12,7 +12,11 @@ public class TicTacToe {
          int index = 0;
          for(int i = 0; i < 3; i++) {
              for(int j = 0; j < 3; j++) {
-                 grid[i][j] = input.charAt(index);
+                 if (input.charAt(index) == '_') {
+                     grid[i][j] = ' ';
+                 } else {
+                     grid[i][j] = input.charAt(index);
+                 }
                  index++;
              }
          }
