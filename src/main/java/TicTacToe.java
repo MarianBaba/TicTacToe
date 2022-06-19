@@ -1,17 +1,32 @@
+import java.util.Scanner;
 
 public class TicTacToe {
 
-    public static void main(String... args) {
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
-                if (j % 2 == 0 && i % 2 == 0) {
-                    System.out.print("X");
-                } else {
-                    System.out.print("O");
-                }
-            }
-            System.out.println();
-        }
-    }
+    private static char[][] grid = new char[3][3];
+    private static Scanner scanner = new Scanner(System.in);
 
+    public static void main(String... args) {
+         System.out.println("Enter cells: ");
+         String input = scanner.nextLine();
+
+         int index = 0;
+         for(int i = 0; i < 3; i++) {
+             for(int j = 0; j < 3; j++) {
+                 grid[i][j] = input.charAt(index);
+                 index++;
+             }
+         }
+
+         System.out.println("---------");
+
+         for (int i = 0; i < 3; i++) {
+             System.out.print("|");
+             for(int j = 0; j < 3; j++) {
+                 System.out.print(" " + grid[i][j]);
+             }
+             System.out.print(" |");
+             System.out.println();
+         }
+         System.out.println("---------");
+    }
 }
